@@ -1,0 +1,18 @@
+--next
+-cmd haxe -cp utils -main Assets -neko utils/Assets.n
+-cmd neko utils/Assets.n
+
+-cp src
+-cp ../haxe-pixi
+-main rocks.arm.matchingcards.Main
+-js js/matching-cards.dev.js
+
+-lib msignal
+-lib actuate
+-lib mconsole
+-lib minject
+-lib howlerjs
+
+-debug
+-dce full
+-D source-map-content
