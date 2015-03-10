@@ -1,16 +1,17 @@
 package rocks.arm.matchingcards;
 
-import rocks.arm.matchingcards.signals.ApplicationViewNotification;
-import rocks.arm.matchingcards.core.utils.AssetLoader;
-import minject.Injector;
+import js.Browser;
 import pixi.plugins.app.Application;
+
 import rocks.arm.matchingcards.controller.Controller;
 import rocks.arm.matchingcards.comms.CommsController;
 import rocks.arm.matchingcards.view.View;
 import rocks.arm.matchingcards.model.Model;
 import rocks.arm.matchingcards.core.utils.BrowserUtils;
-import js.Browser;
 import rocks.arm.matchingcards.core.utils.StageProperties;
+import rocks.arm.matchingcards.signals.ApplicationViewNotification;
+
+import minject.Injector;
 
 class Main extends Application {
 

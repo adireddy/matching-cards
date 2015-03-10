@@ -6,9 +6,6 @@ import minject.Injector;
 import rocks.arm.matchingcards.signals.GameSetupNotification;
 import rocks.arm.matchingcards.core.utils.AssetLoader;
 
-import rocks.arm.matchingcards.components.logo.LogoController;
-import rocks.arm.matchingcards.components.logo.LogoView;
-
 import rocks.arm.matchingcards.components.menu.MenuController;
 import rocks.arm.matchingcards.components.menu.MenuView;
 
@@ -78,8 +75,7 @@ class Controller implements IController {
 	}
 
 	function _setupComponents() {
-		_setupBackground();
-		_setupLogo();
+		_setupMenu();
 		_setupPreloader();
 
 		GameSetupNotification.preloaderStartSetup.dispatch();
@@ -92,17 +88,10 @@ class Controller implements IController {
 		_componentViews.set("PreloaderView", view);
 	}
 
-	function _setupBackground() {
+	function _setupMenu() {
 		var view:MenuView = new MenuView(_view.stage);
 		var controller:MenuController = new MenuController(null, view);
 		_injector.injectInto(view);
-		_componentViews.set("BackgroundView", view);
-	}
-
-	function _setupLogo() {
-		var view:LogoView = new LogoView(_view.stage);
-		var controller:LogoController = new LogoController(null, view);
-		_injector.injectInto(view);
-		_componentViews.set("LogoView", view);
+		_componentViews.set("MenuView", view);
 	}
 }
